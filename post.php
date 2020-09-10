@@ -170,10 +170,9 @@ if (isset($_SESSION["email"])) {
                                             <span class="col-lg-4 comments">
                                                 Comment <i class="fas fa-comment-alt"></i>
                                             </span>
-                                            <span id="like-button">
-                                                
-                                            </span>
-                                            
+                                            <!-- [ Start ] Like Button Check in check.php -->
+                                            <span id="like-button"></span>
+                                            <!-- [ End ] Like Button Check in check.php -->
                                         </div>
                                     </div>
                                     <hr>

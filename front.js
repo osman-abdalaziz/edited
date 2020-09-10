@@ -26,6 +26,7 @@ $(function () {
                 console.log(data);
             }
         });
+        checkLike();
     });
 
     $("#delelike").on("submit", function (e) {
@@ -40,6 +41,7 @@ $(function () {
                 console.log(data);
             }
         });
+        checkLike();
     });
 
     function checkLike(){
@@ -48,11 +50,7 @@ $(function () {
             method: "POST",
             url: "check.php",
             success: function (data) {
-                if(data == 0){
-                    $("#like-button").html('<form method="POST" id="addlike"><input type="hidden" value="addlike" name="action"><input type="hidden" name="post_id" value="<?php echo $post["post_id"]; ?>"><button type="submit" class="like" name="like"><span>Like <i class="far fa-thumbs-up"></i></span></button></form>');
-                } else {
-                    $("#like-button").html('<form method="POST" id="delelike"><input type="hidden" value="delelike" name="action"><input type="hidden" name="post_id" value="<?php echo $post["post_id"]; ?>"><button type="submit" class="like" name="like"><span>Like <i class="fas fa-thumbs-up"></i></span></button></form>');
-                }
+                $("#like-button").html(data);
             }
         });
 
@@ -73,3 +71,5 @@ $(function () {
         });
     });
 });
+
+checkLike();
